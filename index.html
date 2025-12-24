@@ -345,6 +345,73 @@ footer {
   transform: scale(1);
 }
 
+/* ================= LOGO SPLIT + SOCIAL REVEAL (FIXED) ================= */
+
+.logos-section {
+  position: relative;
+  margin: 120px auto 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+  overflow: visible; /* IMPORTANT */
+}
+
+.logo-group {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+/* Ensure logos are ALWAYS visible */
+.logo {
+  opacity: 1 !important;
+  transform: none;
+}
+
+.logo img {
+  width: 120px;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+/* Socials hidden by default */
+.social-reveal {
+  display: flex;
+  gap: 18px;
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Social buttons */
+.social-reveal a {
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 18px;
+  background: linear-gradient(120deg, var(--primary), var(--secondary));
+  box-shadow: 0 0 25px rgba(0,212,255,0.4);
+}
+
+/* Scroll-triggered state */
+.logos-section.active .logo-group.left {
+  transform: translateX(-120px);
+}
+
+.logos-section.active .logo-group.right {
+  transform: translateX(120px);
+}
+
+.logos-section.active .social-reveal {
+  opacity: 1;
+  transform: scale(1);
+}
+
+
 
 </style>
 </head>
